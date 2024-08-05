@@ -1,0 +1,64 @@
+/* Styling for the proposal details section */
+
+/* Ensure the proposal number, life assured name, application number, policy holder name, and comments fields have a white background and black text */
+.proposal-details-field {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the buttons to be push buttons with appropriate spacing and alignment */
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Specific button styles */
+.button-submit {
+  background-color: #28a745;
+}
+
+.button-exit {
+  background-color: #dc3545;
+}
+
+.button-view-documents {
+  background-color: #17a2b8;
+}
+
+.button-proposal-form {
+  background-color: #ffc107;
+}
+
+/* Layout adjustments */
+.proposal-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.proposal-details-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.proposal-details-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+}

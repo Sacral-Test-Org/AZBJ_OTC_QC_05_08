@@ -1,0 +1,248 @@
+/* Purpose: To style the CONTROL section as per the acceptance criteria. */
+
+/* Ensure that the OPUS_DATE and V_USER fields are right-justified with a blue foreground color and a gray background. */
+#opus-date, #v-user {
+  text-align: right;
+  color: blue;
+  background-color: gray;
+}
+
+/* Ensure that the ADDRESS_EDITED field is left-justified with a red foreground color and a yellow background. */
+#address-edited {
+  text-align: left;
+  color: red;
+  background-color: yellow;
+}
+
+/* Ensure that the PC_FIRST_NAME, PC_MIDDLE_NAME, and PC_LAST_NAME fields are displayed in uppercase. */
+#pc-first-name, #pc-middle-name, #pc-last-name {
+  text-transform: uppercase;
+}
+
+/* Ensure that the PAN_STATUS field is left-justified. */
+#pan-status {
+  text-align: left;
+}
+
+/* Ensure that the PAN_CARD field is displayed in uppercase. */
+#pan-card {
+  text-transform: uppercase;
+}
+
+/* Ensure that the IP_PH field is displayed in uppercase. */
+#ip-ph {
+  text-transform: uppercase;
+}
+
+/* Ensure that the PC_DOB field is displayed in uppercase. */
+#pc-dob {
+  text-transform: uppercase;
+}
+
+/* Style for the EXIT button */
+.exit-button {
+  background-color: gray;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.exit-icon {
+  margin-right: 5px;
+}
+
+/* Style for the PB_SAVE_BANK button */
+#pb-save-bank {
+  /* Add specific styles for the SAVE BANK DETAILS button if needed */
+}
+
+/* Style for the VALIDATE button */
+#validate-button {
+  /* Add specific styles for the VALIDATE button if needed */
+}
+
+/* Style for the PREV_POL_DTLS button */
+#prev-pol-dtls {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Style for the error message */
+#error-message {
+  color: red;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}
+
+/* Add styles to hide the PAN card options field by default */
+#pan-card-options-field {
+  display: none;
+}
+
+/* Add styles to show the PAN card options field when the checkbox is checked */
+#checkbox-pan-card-not-available:checked ~ #pan-card-options-field {
+  display: block;
+}
+
+/* Add styles to disable the PAN card input field when the checkbox is checked */
+#checkbox-pan-card-not-available:checked ~ #pan-card-input-field {
+  pointer-events: none;
+  background-color: #e0e0e0;
+}
+
+/* Style for the Partner Type dropdown field */
+#partner-type-dropdown {
+  width: 120px;
+  height: 18px;
+  position: absolute;
+  left: 321px;
+  top: 548px;
+  background-color: white;
+  color: black;
+  font-family: 'MS Sans Serif';
+  font-size: 8pt;
+  font-weight: 500;
+}
+
+/* Style for the Partner Type prompt */
+#partner-type-prompt {
+  font-weight: bold;
+  position: absolute;
+  left: 322px;
+  top: 547px;
+  margin-left: 5px;
+}
+
+/* Style for the PAN Card input field */
+#pan-card-input {
+  text-transform: uppercase;
+  max-length: 15;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 200px;
+  height: 30px;
+  color: black;
+  background-color: white;
+  font-family: 'Arial';
+  font-size: 12pt;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+/* Style for the personal details display fields */
+#first-name, #middle-name, #surname, #dob {
+  position: absolute;
+  left: 100px;
+  width: 200px;
+  height: 30px;
+  color: black;
+  background-color: white;
+  font-family: 'Arial';
+  font-size: 12pt;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+#first-name {
+  top: 150px;
+}
+
+#middle-name {
+  top: 200px;
+}
+
+#surname {
+  top: 250px;
+}
+
+#dob {
+  top: 300px;
+}
+
+/* Style for the Previous Policy Details field */
+#previous-policy-details {
+  position: absolute;
+  left: 100px;
+  top: 350px;
+  width: 200px;
+  height: 30px;
+  color: black;
+  background-color: white;
+  font-family: 'Arial';
+  font-size: 12pt;
+  border: 1px solid #ccc;
+  padding: 5px;
+  pointer-events: none;
+  background-color: #e0e0e0;
+}
+
+#previous-policy-details.enabled {
+  pointer-events: auto;
+  background-color: white;
+}
+
+/* Style for the PAN card validation fields and error messages */
+#pan-card-validation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+#pan-card-validation input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#pan-card-validation .error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid red;
+  background-color: #ffe6e6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#pan-card-validation .success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid green;
+  background-color: #e6ffe6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#pan-card-validation button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}

@@ -1,0 +1,26 @@
+<div class="comments-section">
+  <label for="commentsTextArea" style="position: absolute; top: 41px; left: 162px;">UW Comments</label>
+  <textarea id="commentsTextArea" rows="4" cols="50" maxlength="1000" readonly style="position: absolute; top: 41px; left: 162px; width: 171px; height: 25px; background-color: gray;" (dblclick)="onDoubleClick()"></textarea>
+  <br>
+  <button (click)="handleExitButtonClick()" style="background-color: gray; color: black;">Exit</button>
+  <br>
+  <button id="refreshButton" (click)="onRefreshButtonClick()" style="background-color: gray; color: black;">Refresh</button>
+  <div id="commentsSection" class="comments-list" style="max-height: 300px; overflow-y: auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Date & Time</th>
+          <th>UW Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comment of comments">
+          <td style="background-color: gray;">{{ comment.userId }}</td>
+          <td style="background-color: gray;">{{ comment.dateTime }}</td>
+          <td style="background-color: gray; white-space: pre-wrap;">{{ comment.uwComments }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

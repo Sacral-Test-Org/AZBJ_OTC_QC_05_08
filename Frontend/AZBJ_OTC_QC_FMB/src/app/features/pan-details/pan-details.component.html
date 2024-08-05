@@ -1,0 +1,52 @@
+<div class="pan-details-container">
+  <div class="pan-detail" *ngFor="let pan of panDetails; let i = index" [hidden]="i >= 3">
+    <div class="pan-field">
+      <label for="panNumber{{i}}">PAN Number</label>
+      <input id="panNumber{{i}}" type="text" maxlength="100" [(ngModel)]="pan.panNumber" />
+    </div>
+    <div class="pan-field">
+      <label for="panStatus{{i}}">PAN Status</label>
+      <input id="panStatus{{i}}" type="text" maxlength="2000" [(ngModel)]="pan.panStatus" />
+    </div>
+    <div class="pan-field">
+      <label for="nameMatch{{i}}">Name Match</label>
+      <input id="nameMatch{{i}}" type="text" maxlength="2" [(ngModel)]="pan.nameMatch" />
+    </div>
+    <div class="pan-field">
+      <label for="dobMatch{{i}}">DOB Match</label>
+      <input id="dobMatch{{i}}" type="text" maxlength="2" [(ngModel)]="pan.dobMatch" />
+    </div>
+    <div class="pan-field">
+      <label for="seedingFlag{{i}}">Seeding Flag</label>
+      <input id="seedingFlag{{i}}" type="text" maxlength="2" [(ngModel)]="pan.seedingFlag" />
+    </div>
+  </div>
+  <div *ngIf="panDetails.length > 3" class="scrollbar">
+    <button (click)="scrollUp()">&#9650;</button>
+    <button (click)="scrollDown()">&#9660;</button>
+  </div>
+</div>
+
+<style>
+.pan-details-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.pan-detail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.pan-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+.scrollbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+</style>

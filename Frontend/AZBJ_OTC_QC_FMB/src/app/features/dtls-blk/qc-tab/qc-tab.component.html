@@ -1,0 +1,22 @@
+<div class="qc-tab">
+  <label for="referToSupervisor" 
+         style="position: absolute; left: 450px; top: 209px; font-family: 'Segoe UI'; font-weight: bold; font-size: 9pt;">
+    Refer to Supervisor
+  </label>
+  <select id="referToSupervisor" 
+          (change)="onDropdownChange($event)" 
+          style="position: absolute; left: 450px; top: 225px; width: 150px; height: 16px; font-family: 'MS Sans Serif'; font-weight: medium; font-size: 8pt; background-color: white; color: black;">
+    <option value="No" selected>No</option>
+    <option value="Yes">Yes</option>
+  </select>
+
+  <label for="comments" 
+         style="position: absolute; left: 450px; top: 250px; font-family: 'Segoe UI'; font-weight: bold; font-size: 9pt;">
+    Comments
+  </label>
+  <textarea id="comments" 
+            (dblclick)="onDoubleClick($event)" 
+            maxlength="1000" 
+            style="position: absolute; left: 450px; top: 275px; width: 300px; height: 100px; font-family: 'MS Sans Serif'; font-weight: medium; font-size: 8pt; background-color: white; color: black;">
+  </textarea>
+</div>

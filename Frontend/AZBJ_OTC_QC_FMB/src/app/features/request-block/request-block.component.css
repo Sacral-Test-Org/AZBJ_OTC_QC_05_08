@@ -1,0 +1,14 @@
+#testNumberField {
+  position: absolute;
+  left: 38px;
+  top: 140px;
+  width: 195px;
+  height: 16px;
+  background-color: gray;
+  color: black;
+  text-align: left;
+  font-family: 'MS Sans Serif';
+  font-size: 8pt;
+  font-weight: 500; /* Medium weight */
+  pointer-events: none; /* Make the field read-only */
+}

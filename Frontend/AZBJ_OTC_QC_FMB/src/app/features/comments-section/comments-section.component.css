@@ -1,0 +1,103 @@
+/* Style the text area with a gray background and black text */
+textarea {
+  background-color: gray;
+  color: black;
+  width: 171px;
+  height: 25px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  word-wrap: break-word;
+  position: absolute;
+  top: 41px;
+  left: 162px;
+}
+
+/* Style the checkbox with a white background and black text */
+label {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Style the 'Add Comments' button with a gray background and black text */
+button.add-comments {
+  background-color: gray;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Style the 'Exit' button with a gray background and black text */
+button.exit {
+  background-color: gray;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Ensure the comments section is contained within a specific area of the application window */
+.comments-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* Ensure the comment input field is initially disabled */
+textarea:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Position the comment input field at a specific location on the screen */
+textarea {
+  margin-top: 20px;
+}
+
+/* Style the 'Exit' button to be visible and labeled correctly */
+button.exit {
+  background-color: #d9534f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Style the comments section to be visually appealing */
+.comments-section {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add hover effect to buttons */
+button.add-comments:hover, button.exit:hover {
+  background-color: #5a6268;
+}
+
+/* Add focus effect to textarea */
+textarea:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

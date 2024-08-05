@@ -1,0 +1,64 @@
+/* Root component styles */
+
+/* Styling for the request block test number field */
+.request-block-test-number {
+  position: absolute;
+  left: 38px;
+  top: 140px;
+  width: 195px;
+  height: 16px;
+  background-color: gray;
+  color: black;
+  text-align: left;
+  font-family: 'MS Sans Serif';
+  font-size: 8pt;
+  font-weight: 500; /* medium weight */
+  pointer-events: none; /* make it read-only */
+}
+
+/* Styling for the Upload Docs button */
+.upload-docs-button {
+  position: absolute;
+  left: 282px;
+  top: 165px;
+  width: 86px;
+  height: 18px;
+  background-color: gray;
+  color: black;
+  font-family: 'Tahoma';
+  font-size: 10pt;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+/* Styling for the Partner Type dropdown */
+.partner-type-dropdown {
+  position: absolute;
+  left: 272px;
+  top: 63px;
+  width: 91px;
+  height: 19px;
+  background-color: white;
+  color: black;
+  font-family: 'Tahoma';
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Styling for the HIDE button */
+.hide-button {
+  position: absolute;
+  left: 137px;
+  top: 155px;
+  width: 93px;
+  height: 16px;
+  background-color: white;
+  color: black;
+  font-family: 'Tahoma';
+  font-size: 8pt;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
+}

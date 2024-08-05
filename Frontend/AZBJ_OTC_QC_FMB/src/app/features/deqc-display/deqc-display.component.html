@@ -1,0 +1,45 @@
+<div class="deqc-display-container">
+  <table class="deqc-display-table">
+    <thead>
+      <tr>
+        <th>Application Number</th>
+        <th>Application Status</th>
+        <th>Receipt Number</th>
+        <th>Receipt Date</th>
+        <th>LA Name</th>
+        <th>PH Name</th>
+        <th>Change Description</th>
+        <th>Proposal Number</th>
+        <th>Partner Name</th>
+        <th>Document Status</th>
+        <th>Pending Docs</th>
+        <th>Select</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.applicationNumber }}</td>
+        <td>{{ item.applicationStatus }}</td>
+        <td>{{ item.receiptNumber }}</td>
+        <td>{{ item.receiptDate }}</td>
+        <td>{{ item.laName }}</td>
+        <td>{{ item.phName }}</td>
+        <td>{{ item.changeDescription }}</td>
+        <td>{{ item.proposalNumber }}</td>
+        <td>{{ item.partnerName }}</td>
+        <td>{{ item.documentStatus }}</td>
+        <td>{{ item.pendingDocs }}</td>
+        <td>
+          <input type="checkbox" [checked]="item.selected === 'Y'" (change)="onCheckboxChange($event, item)" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="actions">
+    <button [disabled]="!item.LINKSAVE">LINKSAVE</button>
+    <button [disabled]="!item.VIEW_DOCS">VIEW_DOCS</button>
+    <button [disabled]="!item.UPLOAD_DOCS">UPLOAD_DOCS</button>
+    <button [disabled]="!item.QC">QC</button>
+    <button [disabled]="!item.REJECT">REJECT</button>
+  </div>
+</div>

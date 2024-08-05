@@ -1,0 +1,112 @@
+/* Set the background color of the section to gray */
+.image-details-section {
+  background-color: gray;
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Style the scrollbar */
+.image-details-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.image-details-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.image-details-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Style for text fields and buttons */
+.text-field {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: calc(100% - 10px);
+  max-width: 500px;
+}
+
+.text-field.white-background {
+  background-color: white;
+  color: darkblue;
+}
+
+.text-field.black-text {
+  color: black;
+}
+
+.button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.button.gray-background {
+  background-color: gray;
+  color: darkblue;
+}
+
+.button.white-background {
+  background-color: white;
+  color: black;
+}
+
+/* Specific positions for elements */
+.image-path {
+  position: absolute;
+  top: 120px;
+  left: 46px;
+  max-width: 500px;
+}
+
+.proposal-number {
+  position: absolute;
+  top: 43px;
+  left: 59px;
+}
+
+.application-number {
+  position: absolute;
+  top: 42px;
+  left: 133px;
+}
+
+.image-name {
+  position: absolute;
+  top: 42px;
+  left: 207px;
+}
+
+.image-scan-time {
+  position: absolute;
+  top: 42px;
+  left: 327px;
+}
+
+.image-size {
+  position: absolute;
+  top: 42px;
+  left: 401px;
+}
+
+.view-image {
+  position: absolute;
+  top: 42px;
+  left: 486px;
+}
+
+.hide-button {
+  position: absolute;
+  top: 155px;
+  left: 137px;
+}
+
+.number-of-pages {
+  position: absolute;
+  top: 43px;
+  left: 541px;
+}

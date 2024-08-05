@@ -1,0 +1,164 @@
+/* Global Styles for the Angular Application */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Styles for the request block */
+.request-block {
+  position: absolute;
+  top: 140px;
+  left: 38px;
+  width: 195px;
+  height: 16px;
+  background-color: gray;
+  color: black;
+  text-align: left;
+  font-family: 'MS Sans Serif';
+  font-size: 8pt;
+  font-weight: 500; /* medium weight */
+  pointer-events: none; /* make it read-only */
+}
+
+/* Styles for the Upload Docs button */
+.upload-docs-button {
+  position: absolute;
+  top: 165px;
+  left: 282px;
+  width: 86px;
+  height: 18px;
+  background-color: gray;
+  color: black;
+  font-family: 'Tahoma';
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: center;
+  line-height: 18px; /* vertically center the text */
+  border: none;
+  cursor: pointer;
+}
+
+/* Styles for the Partner Type Dropdown */
+.partner-type-dropdown {
+  position: absolute;
+  top: 63px;
+  left: 272px;
+  width: 91px;
+  height: 19px;
+  background-color: white;
+  color: black;
+  font-family: 'Tahoma';
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 7px; /* prompt attachment offset */
+  margin-left: 4px; /* prompt alignment offset */
+}
+
+/* Styles for the HIDE button */
+.hide-button {
+  position: absolute;
+  top: 155px;
+  left: 137px;
+  width: 93px;
+  height: 16px;
+  background-color: white;
+  color: black;
+  font-family: 'Tahoma';
+  font-size: 8pt;
+  font-weight: normal;
+  text-align: center;
+  line-height: 16px; /* vertically center the text */
+  border: none;
+  cursor: pointer;
+}
+
+/* Styles for the QC section */
+.qc-section {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+.qc-record {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.qc-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.qc-field label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.qc-field input {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Specific styles for each field */
+.pan-number {
+  width: 168px;
+  height: 17px;
+}
+
+.pan-status {
+  width: 133px;
+  height: 17px;
+}
+
+.name-match {
+  width: 120px;
+  height: 17px;
+}
+
+.dob-match {
+  width: 120px;
+  height: 17px;
+}
+
+.seeding-flag {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+/* Styles for the checkbox */
+.checkbox {
+  margin: 10px;
+}
+
+/* Styles for the actions */
+.action-button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.action-button.disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+
+.action-button.enabled {
+  background-color: blue;
+  color: white;
+}

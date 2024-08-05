@@ -1,0 +1,126 @@
+<div class="account-details-container">
+  <form [formGroup]="accountDetailsForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="bypassBankDetails">Bypass Bank Details</label>
+      <input type="checkbox" id="bypassBankDetails" formControlName="bypassBankDetails" (change)="handleCheckboxChange($event)" />
+    </div>
+
+    <div class="form-group">
+      <label for="accountHolderName">Account Holder's Name</label>
+      <input type="text" id="accountHolderName" formControlName="accountHolderName" (input)="convertToUpperCase($event)" [disabled]="accountDetailsForm.get('bypassBankDetails').value" />
+    </div>
+
+    <div class="form-group">
+      <label for="bankName">Bank Name</label>
+      <input type="text" id="bankName" formControlName="bankName" readonly [disabled]="accountDetailsForm.get('bypassBankDetails').value" />
+    </div>
+
+    <div class="form-group">
+      <label for="branchName">Branch Name</label>
+      <input type="text" id="branchName" formControlName="branchName" readonly [disabled]="accountDetailsForm.get('bypassBankDetails').value" />
+    </div>
+
+    <div class="form-group">
+      <label for="micrCode">MICR Code</label>
+      <input type="text" id="micrCode" formControlName="micrCode" readonly [disabled]="accountDetailsForm.get('bypassBankDetails').value" />
+    </div>
+
+    <div class="form-group">
+      <label for="ifscCode" style="position: absolute; left: 292px; top: 434px; font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: bold;">IFSC Code</label>
+      <input type="text" id="ifscCode" formControlName="ifscCode" (blur)="onIFSCCodeBlur()" [disabled]="accountDetailsForm.get('bypassBankDetails').value" maxlength="15" style="position: absolute; left: 295px; top: 437px; width: 169px; height: 16px; background-color: white; color: black; font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: normal; text-transform: uppercase;" />
+    </div>
+
+    <div class="form-group">
+      <label for="accountType">Account Type</label>
+      <select id="accountType" formControlName="accountType" (change)="onAccountTypeChange($event)">
+        <option *ngFor="let type of accountTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="relationshipField" style="font-weight: bold; font-size: 8pt;">Ip Relation with Premium payer</label>
+      <select id="relationshipField" formControlName="relationshipField" (change)="onRelationshipChange($event)" style="position: absolute; left: 295px; top: 485px; width: 135px; height: 16px; background-color: white; color: black; font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: normal;">
+        <option *ngFor="let relationship of relationshipOptions" [value]="relationship">{{ relationship }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="same-bank-dtls-btn" (click)="onSameBankDtlsClick()">Same Bank Dtls</button>
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="save-bank-dtls-btn" (click)="saveBankDetailsButton()">Save Bank Details</button>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+<style>
+  .same-bank-dtls-btn {
+    background-color: gray;
+    font-weight: bold;
+  }
+  .save-bank-dtls-btn {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+  }
+</style>
+
+<!-- Search window for bank details -->
+<div *ngIf="showSearchWindow" class="search-window">
+  <h2>Search for bank details</h2>
+  <input type="text" placeholder="Enter IFSC Code" [(ngModel)]="searchIFSCCode" />
+  <button (click)="searchBankDetails()">Search</button>
+  <div *ngIf="searchResults.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>IFSC Code</th>
+          <th>Bank Name</th>
+          <th>Branch</th>
+          <th>MICR Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of searchResults" (click)="selectBankDetail(result)">
+          <td>{{ result.ifscCode }}</td>
+          <td>{{ result.bankName }}</td>
+          <td>{{ result.branch }}</td>
+          <td>{{ result.micrCode }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button (click)="closeSearchWindow()">Close</button>
+</div>
+
+<style>
+  .search-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .search-window table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .search-window th, .search-window td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .search-window th {
+    background-color: #f2f2f2;
+  }
+  .search-window tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+</style>

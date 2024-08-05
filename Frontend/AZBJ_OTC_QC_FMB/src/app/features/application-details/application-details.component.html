@@ -1,0 +1,40 @@
+<div class="application-details">
+  <h1>Application Details</h1>
+  <div *ngIf="userDetails">
+    <p><strong>Proposal Number:</strong> {{ proposalNumber }}</p>
+    <p><strong>Application Number:</strong> {{ applicationNumber }}</p>
+    <p><strong>User Details:</strong> {{ userDetails.name }}</p>
+  </div>
+
+  <div *ngIf="isAuthorized">
+    <h2>OTC QC Details</h2>
+    <div *ngIf="isEligible">
+      <p><strong>KYC Flag:</strong> {{ kycFlag }}</p>
+      <p><strong>E-KYC Flag:</strong> {{ eKycFlag }}</p>
+      <p><strong>SISO Flag:</strong> {{ sisoFlag }}</p>
+      <p><strong>ENACH Source:</strong> {{ enachSource }}</p>
+      <p><strong>Channel Name:</strong> {{ channelName }}</p>
+      <p><strong>Account Type:</strong> {{ accountType }}</p>
+      <p><strong>TRL Score:</strong> {{ trlScore }}</p>
+      <p><strong>Income Estimator:</strong> {{ incomeEst }}</p>
+      <p><strong>CIBIL Score:</strong> {{ cibilScore }}</p>
+      <p><strong>Comments:</strong> {{ comments }}</p>
+      <div>
+        <label for="teleVideoMerApproved"><strong>Tele/Video Mer (Approved):</strong></label>
+        <input id="teleVideoMerApproved" [(ngModel)]="teleVideoMerApproved" (change)="onTeleVideoMerApprovedChange($event.target.value)" />
+      </div>
+    </div>
+    <div *ngIf="!isEligible">
+      <p>The application is not eligible for OTC QC.</p>
+    </div>
+  </div>
+  <div *ngIf="!isAuthorized">
+    <p>You are not authorized to view OTC QC details.</p>
+  </div>
+  <div *ngIf="errorMessage">
+    <p class="error">{{ errorMessage }}</p>
+  </div>
+  <div *ngIf="isLoading">
+    <p>Loading application details...</p>
+  </div>
+</div>

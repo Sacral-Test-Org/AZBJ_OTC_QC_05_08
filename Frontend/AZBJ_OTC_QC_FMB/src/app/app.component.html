@@ -1,0 +1,23 @@
+<div class="request-block">
+  <div class="test-number" style="position: absolute; left: 38px; top: 140px; width: 195px; height: 16px; background-color: gray; color: black; text-align: left; font-family: 'MS Sans Serif'; font-size: 8pt; font-weight: 500;">
+    {{ testNumber }}
+  </div>
+  <button (click)="openUploadForms()" style="position: absolute; left: 282px; top: 165px; width: 86px; height: 18px; background-color: gray; color: black; font-family: 'Tahoma'; font-size: 10pt; font-weight: bold;">
+    Upload Docs
+  </button>
+  <div class="search-tab">
+    <label for="partnerType" style="position: absolute; left: 265px; top: 59px; font-family: 'Tahoma'; font-size: 10pt; font-weight: bold;">Partner Type:</label>
+    <select id="partnerType" name="partnerType" style="position: absolute; left: 272px; top: 63px; width: 91px; height: 19px; background-color: white; color: black; font-family: 'Tahoma'; font-size: 10pt; font-weight: bold;">
+      <option *ngFor="let type of partnerTypes" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+  <!-- HIDE button as per user story -->
+  <button (click)="focusProposalNo()" style="position: absolute; left: 137px; top: 155px; width: 93px; height: 16px; background-color: white; color: black; font-family: 'Tahoma'; font-size: 8pt; font-weight: normal;">
+    HIDE
+  </button>
+  <!-- dtls_blk section with proposal_no field -->
+  <div id="dtls_blk" style="position: absolute; left: 50px; top: 200px;">
+    <label for="proposal_no" style="font-family: 'Tahoma'; font-size: 10pt; font-weight: bold;">Proposal No:</label>
+    <input id="proposal_no" name="proposal_no" type="text" style="width: 150px; height: 20px; font-family: 'Tahoma'; font-size: 10pt; font-weight: normal;">
+  </div>
+</div>

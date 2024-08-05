@@ -1,0 +1,35 @@
+<div class="proposal-details-container">
+  <div class="header">
+    <div class="proposal-number" [ngStyle]="{'background-color': 'white', 'color': 'black'}">
+      Proposal Number: {{proposalNumber}}
+    </div>
+    <div class="life-assured-name" [ngStyle]="{'background-color': 'white', 'color': 'black'}">
+      Life Assured Name: {{lifeAssuredName}}
+    </div>
+    <div class="view-buttons">
+      <button id="viewAllDocuments" (click)="onViewAllDocuments()">View All Documents</button>
+      <button (click)="onProposalForm()">Proposal Form</button>
+    </div>
+  </div>
+  <div class="details">
+    <div class="application-number" [ngStyle]="{'background-color': 'white', 'color': 'black'}">
+      Application Number: {{applicationNumber}}
+    </div>
+    <div class="policy-holder-name" [ngStyle]="{'background-color': 'white', 'color': 'black'}">
+      Policy Holder Name: {{policyHolderName}}
+    </div>
+  </div>
+  <div class="comments" [ngStyle]="{'background-color': 'white', 'color': 'black'}">
+    Comments: <textarea readonly>{{comments}}</textarea>
+  </div>
+  <div class="refer-to-supervisor" [ngStyle]="{'background-color': 'white', 'color': 'black'}">
+    Refer to Supervisor: <select [(ngModel)]="referToSupervisor">
+      <option value="N">N</option>
+      <option value="Y">Y</option>
+    </select>
+  </div>
+  <div class="action-buttons">
+    <button (click)="onSubmit()">Submit</button>
+    <button (click)="onExit()">Exit</button>
+  </div>
+</div>

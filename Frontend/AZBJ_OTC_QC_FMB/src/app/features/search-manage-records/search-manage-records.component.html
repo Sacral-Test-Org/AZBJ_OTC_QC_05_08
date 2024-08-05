@@ -1,0 +1,78 @@
+<div class="search-manage-records">
+  <form>
+    <div class="form-group">
+      <label for="start_date">Start Date:</label>
+      <input type="text" id="start_date" name="start_date" [(ngModel)]="start_date" placeholder="dd/mm/yyyy">
+    </div>
+    <div class="form-group">
+      <label for="end_date">End Date:</label>
+      <input type="text" id="end_date" name="end_date" [(ngModel)]="end_date" placeholder="dd/mm/yyyy">
+    </div>
+    <div class="form-group">
+      <label for="application_number">Application Number:</label>
+      <input type="text" id="application_number" name="application_number" [(ngModel)]="application_number">
+    </div>
+    <div class="form-group">
+      <label for="partner_type">Partner Type:</label>
+      <select id="partner_type" name="partner_type" [(ngModel)]="partner_type" style="position: absolute; left: 272px; top: 63px; width: 91px; height: 19px; background-color: white; color: black; font-family: Tahoma; font-weight: bold; font-size: 10pt;">
+        <option *ngFor="let type of partnerTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select id="status" name="status" [(ngModel)]="status" style="position: absolute; left: 428px; top: 63px; width: 91px; height: 19px; background-color: white; color: black; font-family: Tahoma; font-weight: bold; font-size: 10pt; text-transform: uppercase;">
+        <option *ngFor="let stat of statuses" [value]="stat">{{ stat }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="to_date" style="position: absolute; left: 367px; top: 50px; font-family: Tahoma; font-size: 10px; font-weight: bold;">To_Date:</label>
+      <input type="text" id="to_date" name="to_date" [(ngModel)]="to_date" placeholder="dd/mm/yyyy" style="position: absolute; left: 410px; top: 35px; width: 91px; height: 19px; background-color: white; color: black; font-family: Tahoma; font-size: 10px; font-weight: bold;">
+    </div>
+    <div class="form-buttons">
+      <button type="button" (click)="onSearch()">Search</button>
+      <button type="button" (click)="clearForm()">Clear</button>
+      <button type="button" (click)="onSaveButtonClick()">Save</button>
+      <button type="button" (click)="onViewDocs()" [disabled]="!isViewDocsEnabled">View Docs</button>
+      <button type="button" class="upload-docs-button" (click)="openUploadForms()">Upload Docs</button>
+      <button type="button" (click)="onEdit()" style="position: absolute; left: 369px; top: 165px; width: 86px; height: 18px; background-color: gray; color: black; font-family: Tahoma; font-size: 10px; font-weight: bold;">QC/Edit</button>
+      <button type="button" (click)="onUwCommentsButtonClick()">UW Comments</button>
+      <button type="button" (click)="onReject()">Reject</button>
+    </div>
+    <div class="form-group" *ngIf="showRejectionReason">
+      <label for="rejection_reason">Reason for Rejection:</label>
+      <textarea id="rejection_reason" name="rejection_reason" [(ngModel)]="rejection_reason"></textarea>
+    </div>
+    <div class="form-buttons" *ngIf="showRejectionReason">
+      <button type="button" (click)="onConfirmAction()">OK</button>
+    </div>
+    <div class="form-group" *ngIf="isReasonSectionVisible">
+      <label for="reason_input">Reason:</label>
+      <textarea id="reason_input" name="reason_input" [(ngModel)]="reason_link"></textarea>
+    </div>
+    <div class="form-buttons">
+      <button type="button" (click)="onOkButtonClick()">OK</button>
+    </div>
+    <div class="form-group">
+      <label for="status_display">Status:</label>
+      <input type="text" id="status_display" name="status_display" [(ngModel)]="status" readonly>
+    </div>
+    <div class="form-buttons">
+      <button type="button" (click)="onExitClick()" style="position: absolute; left: 473px; top: 539px; width: 64px; height: 18px; font-family: 'Times New Roman'; font-size: 12pt; font-weight: medium; text-transform: uppercase;">Exit</button>
+    </div>
+  </form>
+  <div *ngFor="let record of records">
+    <div>
+      <p>Application Number: {{ record.applicationNumber }}</p>
+      <p>Application Status: {{ record.applicationStatus }}</p>
+      <p>Receipt Number: {{ record.receiptNumber }}</p>
+      <p>Receipt Date: {{ record.receiptDate }}</p>
+      <p>Applicant's Full Name: {{ record.applicantFullName }}</p>
+      <p>Policyholder's Full Name: {{ record.policyholderFullName }}</p>
+      <p>Partner Name: {{ record.partnerName }}</p>
+      <p>Document Status: {{ record.documentStatus }}</p>
+    </div>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

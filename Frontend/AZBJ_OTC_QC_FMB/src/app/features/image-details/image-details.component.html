@@ -1,0 +1,44 @@
+<section class="image-details-section">
+  <div class="image-details-container">
+    <div *ngFor="let image of images | slice: (currentPage - 1) * 5 : currentPage * 5" class="image-detail">
+      <div class="field" style="top: 120px; left: 46px;">
+        <label>Image Path</label>
+        <input type="text" [value]="image.imagePath" maxlength="500" readonly />
+      </div>
+      <div class="field" style="top: 43px; left: 59px;">
+        <label>Proposal Number</label>
+        <input type="text" [value]="image.proposalNumber" readonly style="background-color: white; color: darkblue;" />
+      </div>
+      <div class="field" style="top: 42px; left: 133px;">
+        <label>Appl.Number</label>
+        <input type="text" [value]="image.applicationNumber" readonly style="background-color: white; color: darkblue;" />
+      </div>
+      <div class="field" style="top: 42px; left: 207px;">
+        <label>Image Type</label>
+        <input type="text" [value]="image.imageName" readonly style="background-color: white; color: darkblue;" />
+      </div>
+      <div class="field" style="top: 42px; left: 327px;">
+        <label>Scan Time</label>
+        <input type="text" [value]="image.imageScanTime" readonly style="background-color: white; color: darkblue;" />
+      </div>
+      <div class="field" style="top: 42px; left: 401px;">
+        <label>Image Size (In KB)</label>
+        <input type="number" [value]="image.imageSize" readonly style="background-color: white; color: darkblue;" />
+      </div>
+      <div class="field" style="top: 42px; left: 486px;">
+        <button (click)="viewImage(image.imagePath)" style="background-color: gray; color: darkblue;">&View Image</button>
+      </div>
+      <div class="field" style="top: 155px; left: 137px;">
+        <button (click)="onHideButtonClick()" style="background-color: white; color: black; font-family: Tahoma; font-size: 8pt; width: 93px; height: 16px;">HIDE</button>
+      </div>
+      <div class="field" style="top: 43px; left: 541px;">
+        <label>Number of Pages</label>
+        <input type="text" [value]="image.numberOfPages" readonly style="background-color: white; color: black;" />
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <button (click)="paginate(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="paginate(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</section>

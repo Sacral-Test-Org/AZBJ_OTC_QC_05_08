@@ -1,0 +1,100 @@
+<div class="control-section">
+  <div class="field" id="opus-date">
+    <label for="opusDate">OPUS_DATE:</label>
+    <input type="text" id="opusDate" [(ngModel)]="opusDate" class="right-justified blue-text gray-bg" readonly />
+  </div>
+
+  <div class="field" id="v-user">
+    <label for="vUser">V_USER:</label>
+    <input type="text" id="vUser" [(ngModel)]="vUser" class="right-justified blue-text gray-bg" readonly />
+  </div>
+
+  <div class="field" id="address-edited">
+    <label for="addressEdited">ADDRESS_EDITED:</label>
+    <input type="text" id="addressEdited" [(ngModel)]="addressEdited" class="left-justified red-text yellow-bg" />
+  </div>
+
+  <div class="field" id="pc-first-name">
+    <label for="pcFirstName">PC_FIRST_NAME:</label>
+    <input type="text" id="pcFirstName" [(ngModel)]="pcFirstName" maxlength="50" class="uppercase" />
+  </div>
+
+  <div class="field" id="pc-middle-name">
+    <label for="pcMiddleName">PC_MIDDLE_NAME:</label>
+    <input type="text" id="pcMiddleName" [(ngModel)]="pcMiddleName" maxlength="50" class="uppercase" />
+  </div>
+
+  <div class="field" id="pc-last-name">
+    <label for="pcLastName">PC_LAST_NAME:</label>
+    <input type="text" id="pcLastName" [(ngModel)]="pcLastName" maxlength="50" class="uppercase" />
+  </div>
+
+  <div class="field" id="pan-status">
+    <label for="panStatus">PAN_STATUS:</label>
+    <input type="text" id="panStatus" [(ngModel)]="panStatus" class="left-justified" />
+  </div>
+
+  <div class="field" id="pan-card-verification">
+    <label for="panCardVerification">PAN_CARD_VERIFICATION:</label>
+    <input type="radio" id="panCardVerification" [(ngModel)]="panCardVerification" value="Y" /> Yes
+    <input type="radio" id="panCardVerification" [(ngModel)]="panCardVerification" value="N" /> No
+  </div>
+
+  <div class="field" id="pan-card">
+    <label for="panCard">PAN_CARD:</label>
+    <input type="text" id="panCard" [(ngModel)]="panCard" maxlength="10" class="uppercase" (input)="onPanCardInputChange($event)" />
+  </div>
+
+  <div class="field" id="ip-ph">
+    <label for="ipPh">IP_PH:</label>
+    <select id="ipPh" [(ngModel)]="ipPh" class="uppercase">
+      <option *ngFor="let option of ipPh" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+
+  <div class="field" id="ph-no-pan-card">
+    <label for="phNoPanCard">PH_NO_PAN_CARD:</label>
+    <input type="checkbox" id="phNoPanCard" [(ngModel)]="phNoPanCard" (change)="onCheckboxChange($event)" /> Pan Card not Available
+  </div>
+
+  <div class="field" id="ph-no-pan-lov" *ngIf="phNoPanCard">
+    <label for="phNoPanLov">PH_NO_PAN_LOV:</label>
+    <select id="phNoPanLov" [(ngModel)]="phNoPanLov">
+      <option *ngFor="let option of phNoPanLovOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+
+  <div class="field" id="rrb-bank-account" *ngIf="false">
+    <label for="rrbBankAccount">RRB_BANK_ACCOUNT:</label>
+    <input type="checkbox" id="rrbBankAccount" [(ngModel)]="rrbBankAccount" />
+  </div>
+
+  <div class="field" id="pc-dob">
+    <label for="pcDob">PC_DOB:</label>
+    <input type="text" id="pcDob" [(ngModel)]="pcDob" class="uppercase" placeholder="DD/MM/RRRR" />
+  </div>
+
+  <div class="field" id="partner-type">
+    <label for="partnerType" class="bold">Partner Type:</label>
+    <select id="partnerType" [(ngModel)]="partnerType" (change)="validatePartnerType()" class="partner-type-dropdown">
+      <option *ngFor="let type of partnerTypes" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+
+  <div class="buttons">
+    <button id="pbSaveBank" (click)="onSaveBankDetails()">SAVE BANK DETAILS</button>
+    <button id="validate" (click)="onValidate()">VALIDATE</button>
+    <button id="prevPolDtls" (click)="onPreviousPolicyPanDetailsClick()" [disabled]="!previousPolicyDetailsEnabled">Previous Policy Pan Details</button>
+    <button id="exit" class="exit-button" (click)="onExitButtonClick()">
+      <i class="exit-icon"></i> EXIT
+    </button>
+  </div>
+
+  <div *ngIf="showError" class="error-message">
+    <span>{{ errorMessage }}</span>
+  </div>
+</div>
+
+<!-- Hidden fields -->
+<input type="hidden" id="productId" [(ngModel)]="productId" />
+<input type="hidden" id="contractId" [(ngModel)]="contractId" />

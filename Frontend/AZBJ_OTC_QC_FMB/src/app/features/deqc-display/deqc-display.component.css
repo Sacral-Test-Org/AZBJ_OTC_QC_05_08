@@ -1,0 +1,165 @@
+/* General styles for the display section */
+.display-section {
+  overflow-y: scroll;
+  width: 824px;
+  height: 170px;
+  position: absolute;
+  top: 237px;
+  left: 26px;
+}
+
+/* Styles for each field */
+.field {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+}
+
+/* Specific styles for each field based on coordinates and dimensions */
+.application-number {
+  width: 59px;
+  height: 17px;
+  top: 0;
+  left: 0;
+}
+
+.application-status {
+  width: 84px;
+  height: 17px;
+  top: 0;
+  left: 59px;
+}
+
+.receipt-number {
+  width: 63px;
+  height: 17px;
+  top: 0;
+  left: 143px;
+}
+
+.receipt-date {
+  width: 55px;
+  height: 17px;
+  top: 0;
+  left: 206px;
+}
+
+.la-name {
+  width: 104px;
+  height: 17px;
+  top: 0;
+  left: 261px;
+}
+
+.ph-name {
+  width: 99px;
+  height: 17px;
+  top: 0;
+  left: 365px;
+}
+
+.change-description {
+  width: 91px;
+  height: 17px;
+  top: 0;
+  left: 464px;
+}
+
+.proposal-number {
+  width: 88px;
+  height: 17px;
+  top: 0;
+  left: 555px;
+}
+
+.partner-name {
+  width: 72px;
+  height: 17px;
+  top: 0;
+  left: 643px;
+}
+
+document-status {
+  width: 76px;
+  height: 17px;
+  top: 0;
+  left: 715px;
+}
+
+.pending-docs {
+  width: 82px;
+  height: 17px;
+  top: 0;
+  left: 791px;
+}
+
+.checkbox {
+  width: 10px;
+  height: 17px;
+  top: 0;
+  left: 873px;
+  background-color: gray;
+}
+
+/* Scrollbar styles */
+.display-section::-webkit-scrollbar {
+  width: 12px;
+}
+
+.display-section::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.display-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Styles for the checkbox and actions */
+.checkbox {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.action-button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.action-button.enabled {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Specific styles for each action button */
+#LINKSAVE {
+  /* Additional styles if needed */
+}
+
+#VIEW_DOCS {
+  /* Additional styles if needed */
+}
+
+#UPLOAD_DOCS {
+  /* Additional styles if needed */
+}
+
+#QC {
+  /* Additional styles if needed */
+}
+
+#REJECT {
+  /* Additional styles if needed */
+}
